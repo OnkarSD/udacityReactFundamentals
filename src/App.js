@@ -4,7 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ListOfBooks from "./components/ListOfBooks";
 import SearchBook from "./components/SearchBook";
-import EachShelf from "./components/EachShelf";
+// import EachShelf from "./components/EachShelf";
 
 class App extends Component {
   state = {
@@ -41,13 +41,18 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <ListOfBooks books={this.state.allBooks} />}
+            render={() => (
+              <ListOfBooks
+                books={this.state.allBooks}
+                onChangeOfBook={this.handleBookChange}
+              />
+            )}
           />
           <Route
             path="/search"
             render={() => (
               <SearchBook
-                onChangeShelf={this.handleChangeShelf}
+                onChangeOfBook={this.handleBookChange}
                 books={this.state.allBooks}
               />
             )}
