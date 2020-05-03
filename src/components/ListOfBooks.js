@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import * as BookAPI from "../BooksAPI";
 import EachShelf from "./EachShelf";
 
 class ListOfBooks extends Component {
@@ -16,16 +15,16 @@ class ListOfBooks extends Component {
               (book) => book.shelf === "currentlyReading"
             )}
             key="currentlyReading"
-            title="currentlyReading"
-            onShelfUpdate={this.props.onChangeOfBooks}
+            title="Currently Reading"
+            onShelfUpdate={this.props.onChangeOfBook}
           />
           <EachShelf
             availableBooks={this.props.books.filter(
               (book) => book.shelf === "wantToRead"
             )}
             key="wantToRead"
-            title="wantToRead"
-            onShelfUpdate={this.props.onChangeOfBooks}
+            title="Want To Read"
+            onShelfUpdate={this.props.onChangeOfBook}
           />
           <EachShelf
             availableBooks={this.props.books.filter(
@@ -33,7 +32,7 @@ class ListOfBooks extends Component {
             )}
             key="read"
             title="read"
-            onShelfUpdate={this.props.onChangeOfBooks}
+            onShelfUpdate={this.props.onChangeOfBook}
           />
         </div>
         <div className="open-search">

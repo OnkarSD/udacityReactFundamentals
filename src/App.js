@@ -16,7 +16,7 @@ class App extends Component {
       this.setState({
         allBooks: data,
       });
-      console.log(this.state.allBooks);
+      // console.log(this.state.allBooks);
     });
   }
 
@@ -36,8 +36,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <Router>
+      <Router>
+        <div className="app">
           <Route
             exact
             path="/"
@@ -57,8 +57,8 @@ class App extends Component {
               />
             )}
           />
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }
